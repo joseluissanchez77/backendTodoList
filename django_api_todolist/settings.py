@@ -52,6 +52,8 @@ INSTALLED_APPS = [
     'users',
 ]
 
+LANGUAGE_CODE = "es-es"
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'whitenoise.middleware.WhiteNoiseMiddleware',
@@ -62,6 +64,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ALLOWED_HOSTS=['*']
