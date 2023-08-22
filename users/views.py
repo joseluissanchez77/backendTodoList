@@ -68,3 +68,15 @@ def get_list_users(request):
     return Response(serializer.data, status.HTTP_200_OK)
 
 # https://www.django-rest-framework.org/tutorial/2-requests-and-responses/
+
+# class ListUsersView(generics.ListAPIView):
+#     serializer_class = RegisterSerializer
+
+#     Response({'error': 'no autenticado'}, status=400)
+#     # def get_queryset():
+#         # user = self.request.user
+        
+        
+            
+#         # return Response({'error': 'no autenticado'}, status=400)
+#         # print('hola')
