@@ -100,16 +100,16 @@ DATABASES = {
         # 'ENGINE': 'django.db.backends.sqlite3',
         # 'NAME': BASE_DIR / 'db.sqlite3',
         'ENGINE'    : 'django.db.backends.postgresql_psycopg2',
-        # # 'NAME'      : 'minisoft',
-        # # 'USER'      : 'jlsanchezb',
-        # # 'PASSWORD'  : 's2KnHGStemLalblOzC8t8shalsNeF4cQ',
-        # # 'HOST'      : 'dpg-cjahrli683bs73d7u9fg-a.oregon-postgres.render.com',
-        # # 'PORT'      : 5432
-        'NAME'      : 'DB_MS_DJANGO',
-        'USER'      :'postgres',
-        'PASSWORD'  : 'root',
-        'HOST'      : 'localhost',
+        'NAME'      : 'minisoft',
+        'USER'      : 'jlsanchezb',
+        'PASSWORD'  : 's2KnHGStemLalblOzC8t8shalsNeF4cQ',
+        'HOST'      : 'dpg-cjahrli683bs73d7u9fg-a.oregon-postgres.render.com',
         'PORT'      : 5432
+        # 'NAME'      : 'DB_MS_DJANGO',
+        # 'USER'      :'postgres',
+        # 'PASSWORD'  : 'root',
+        # 'HOST'      : 'localhost',
+        # 'PORT'      : 5432
     }
 }
 
