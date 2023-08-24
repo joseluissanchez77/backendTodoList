@@ -5,6 +5,8 @@ from knox.auth import AuthToken
 from .serializers import  RegisterSerializer
 from django.contrib.auth.models import User
 from rest_framework import status
+from rest_framework import generics, permissions
+from rest_framework.permissions import IsAuthenticated
 
 @api_view(['POST'])
 def login_api(request):
@@ -22,20 +24,28 @@ def login_api(request):
         'token':token
     })
 
-@api_view(['GET'])
-def get_user_data(request):
-    user = request.user
+# @api_view(['GET'])
+# def get_user_data(request):
+#     user = request.user
 
-    if user.is_authenticated:
-        return Response({
-            'user_info':{
-                'id':user.id,
-                'username':user.username,
-                'email':user.email 
-            },
-        })
-    
-    return Response({'error': 'no autenticado'}, status=400)
+#     if user.is_authenticated:
+#         return Response({
+#             'user_info':{
+#                 'id':user.id,
+#                 'username':user.username,
+#                 'email':user.email 
+#             },
+#         })
+#     return Response({'error': 'no autenticado'}, status=400)
+
+class UserData(generics.RetrieveAPIView):
+    permission_classes = [
+        IsAuthenticated,
+    ]
+    serializer_class = RegisterSerializer
+
+    def get_object(self):
+        return self.request.user
 
 @api_view(['POST'])
 def register_api(request):
