@@ -7,6 +7,8 @@ from django.contrib.auth.models import User
 from rest_framework import status
 from rest_framework import generics, permissions
 from rest_framework.permissions import IsAuthenticated
+from django.contrib.auth.hashers import make_password
+
 
 @api_view(['POST'])
 def login_api(request):
