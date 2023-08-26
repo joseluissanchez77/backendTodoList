@@ -1,12 +1,14 @@
 from django.contrib.auth.models import User
 from rest_framework import serializers, validators
-
+from django.contrib.auth.hashers import make_password
 
 
 class RegisterSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
         fields = ['id','username','password','email','first_name','last_name']
+
+        # validate_password = make_password
 
         extra_kwargs = {
             "password" : {"write_only":True},
@@ -30,7 +32,7 @@ class RegisterSerializer(serializers.ModelSerializer):
 
         user = User.objects.create(
             username = username,
-            password = password,
+            password = make_password(password),
             first_name = first_name,
             last_name = last_name,
             email = email

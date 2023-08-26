@@ -54,6 +54,7 @@ def register_api(request):
     serializer = RegisterSerializer(data = request.data)
     serializer.is_valid(raise_exception=True)
 
+    #user.password(request['password'])
     user = serializer.save()
     __, token = AuthToken.objects.create(user)
 
